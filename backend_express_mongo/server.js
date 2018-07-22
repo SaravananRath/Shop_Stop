@@ -11,6 +11,6 @@ app.get('/',(req,res)=>{
     res.json({"message":"Welcome to the products page"})
 })
 
-var server=app.listen(port,()=>{
+app.listen(port,()=>{
     console.log("Server is listening on Port",port)
 })
