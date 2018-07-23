@@ -29,7 +29,7 @@
 </head>
 <body>
     <h3>Add Product</h3>
-    <form method action='/addProduct' enctype="multipart/form-data">
+    <form method="post" action='/products' enctype="multipart/form-data">
         <label> Enter Product Details</label><p></p>
         <label>Select Category</label>
         <select name="productCategory" >
@@ -38,6 +38,7 @@
             <option value="Kid">Kids</option>
         </select><p></p>
         <input type="text" name='productName'placeholder="Enter Product Name"><p></p>
+        <input type="number" name='productCount'placeholder="Enter Product Count"><p></p>
 
         <label>Select Brand</label>
         <select name="Brand">
@@ -51,14 +52,17 @@
             <option value="Bata">Bata</option>
         </select><p></p>
         <label>Description</label><p></p>
-        <textarea name="" id="" cols="30" rows="5" placeholder="description">
+        <textarea name="description" id="" cols="30" rows="10" >
         </textarea><p></p>
         <input type="number" name="productPrice" placeholder="Enter Price"><p></p>
         <input type="number" name="productDiscount" placeholder="Enter Discount %"><p></p>
+
         <input type="file" name="image"><p></p>
-        <div id="container"></div>
-        <button onclick="addField()">Add Review</button><p></p>
+        <input type="text" name="review" placeholder="review"><p></p>
+        <!--<div id="container"></div>-->
         <input type="submit" value="Add Product">
     </form>
+    <!--<button id='review'onclick="addField()">Add Review</button><p></p>-->
+
 </body>
 </html>

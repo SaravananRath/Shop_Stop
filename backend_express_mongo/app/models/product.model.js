@@ -1,15 +1,15 @@
 const mongoose = require('mongoose')
 
 const ProductSchema = mongoose.Schema({
-    category:String,
-    name:String,
-    brand:String,
+    productCategory:String,
+    productName:String,
+    productCount:Number,
+    Brand:String,
     description:String,
-    price:Number,
-    discount_percentage:Number,
-    reviews:[String],
-    count:Number,
-    img:{data:Buffer,contentType:String}
+    productPrice:Number,
+    productDiscount:Number,
+    review:String,
+    image:{data:Buffer,contentType:String}
 },{
     timestamps:true
 })
