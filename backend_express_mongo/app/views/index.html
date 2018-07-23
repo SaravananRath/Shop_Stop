@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var number = 1
+        function addField(){
+            // alert(number)
+            var container=document.getElementById("container")
+            while(container.hasChildNodes()){
+                container.removeChild(container.lastChild)
+            }
+            for(i=0;i<number;i++) {
+                // container.appendChild(document.createTextNode('Review ' + (i + 1)))
+                var input = document.createElement('input')
+                input.type = 'text'
+                input.name = 'review_' + (i + 1)
+                input.placeholder ='Review '+(i+1)
+                container.appendChild(input)
+                container.appendChild(document.createElement("p"))
+            }
+            number++
+        }
+    </script>
+</head>
+<body>
+    <h3>Add Product</h3>
+    <form method action='/addProduct' enctype="multipart/form-data">
+        <label> Enter Product Details</label><p></p>
+        <label>Select Category</label>
+        <select name="productCategory" >
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+            <option value="Kid">Kids</option>
+        </select><p></p>
+        <input type="text" name='productName'placeholder="Enter Product Name"><p></p>
+
+        <label>Select Brand</label>
+        <select name="Brand">
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+            <option value="Arrow">Arrow</option>
+            <option value="Raymond">Raymond</option>
+            <option value="Nandhu">Nandhu</option>
+            <option value="SRS">SRS</option>
+            <option value="Woodland">Woodland</option>
+            <option value="Bata">Bata</option>
+        </select><p></p>
+        <label>Description</label><p></p>
+        <textarea name="" id="" cols="30" rows="5" placeholder="description">
+        </textarea><p></p>
+        <input type="number" name="productPrice" placeholder="Enter Price"><p></p>
+        <input type="number" name="productDiscount" placeholder="Enter Discount %"><p></p>
+        <input type="file" name="image"><p></p>
+        <div id="container"></div>
+        <button onclick="addField()">Add Review</button><p></p>
+        <input type="submit" value="Add Product">
+    </form>
+</body>
+</html>

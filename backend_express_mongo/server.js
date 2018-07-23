@@ -5,6 +5,8 @@ const mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 const app = express()
 const port = 3001
+var routes = require('./app/routes/product.routes')
+routes(app)
 
 mongoose.connect(dbConfig.url,{ useNewUrlParser: true })
     .then(()=>{
@@ -19,10 +21,9 @@ mongoose.connect(dbConfig.url,{ useNewUrlParser: true })
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(bodyParser.json())
+// app.get('/',express.static(__dirname+'/views/index.html'))
 
-app.get('/',(req,res)=>{
-    res.json({"message":"Welcome to the products page"})
-})
+
 
 app.listen(port,()=>{
     console.log("Server is listening on Port",port)
