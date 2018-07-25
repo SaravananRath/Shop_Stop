@@ -7,20 +7,23 @@ class App extends Component {
     constructor(){
         super()
         this.state={
-            imageUrl:''
+            products:''
         }
     }
     componentDidMount(){
          axios.get('/products')
              .then(res=>{
-                 console.log(res.data)
-                 this.setState({imageUrl:res.data})
+                 console.log(res.data[0])
+                 this.setState({products:res.data[0]})
              })
              .catch(error=>{
                  console.log("Error"+error)
              })
         // this.setState({imageUrl:})
     }
+
+
+
   render() {
     return (
       <div className="App">
@@ -30,12 +33,8 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
-
-            {/*<img src="http://localhost:3001/image-1532425576487.jpg" alt=""/>*/}
-            {/*<img src={require("../../backend_express_mongo/app/public/uploads/image-1532425576487.jpg")} alt="Not availables"/>*/}
-            {/*<img src="../../backend_express_mongo/app/public/uploads/image-1532425576487.jpg" alt="No image"/>*/}
         </p>
-          <img src={this.state.imageUrl} width='300px' alt="Not available"/>
+          {(this.state.products)?(this.state.products.imageUrls.map((a,index)=>{return(<img key={index} src={a}  width='200px' height='280px'/>)})):(<div></div>)}
       </div>
     );
   }

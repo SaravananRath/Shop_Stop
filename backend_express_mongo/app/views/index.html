@@ -7,23 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        var number = 1
+        function addImageField(){
+            var imageContainer = document.getElementById('imageContainer')
+            var input = document.createElement('input')
+            input.type='file'
+            input.name='image'
+            imageContainer.appendChild(input)
+            imageContainer.appendChild(document.createElement('p'))
+
+        }
         function addField(){
-            // alert(number)
             var container=document.getElementById("container")
-            // while(container.hasChildNodes()){
-            //     container.removeChild(container.lastChild)
-            // }
-            for(i=number-1;i<number;i++) {
-                // container.appendChild(document.createTextNode('Review ' + (i + 1)))
+            // container.appendChild(document.createTextNode('Review ' + (i + 1)))
                 var input = document.createElement('input')
                 input.type = 'text'
-                input.name = 'review_' + (i + 1)
-                input.placeholder ='Review '+(i+1)
+                input.name = 'reviews'
+                input.placeholder ='Review'
                 container.appendChild(input)
                 container.appendChild(document.createElement("p"))
-            }
-            number++
         }
     </script>
 </head>
@@ -52,17 +53,16 @@
             <option value="Bata">Bata</option>
         </select><p></p>
         <label>Description</label><p></p>
-        <textarea name="description" id="" cols="30" rows="10" >
-        </textarea><p></p>
+        <textarea name="description" id="" cols="30" rows="10"></textarea><p></p>
         <input type="number" name="productPrice" placeholder="Enter Price"><p></p>
         <input type="number" name="productDiscount" placeholder="Enter Discount %"><p></p>
-
-        <input type="file" name="image"><p></p>
-        <input type="text" name="review" placeholder="review"><p></p>
+        <button id='image' onclick="addImageField()" type="button">Add Image</button><p></p>
+        <div id="imageContainer"></div>
+        <button id='review' onclick="addField()" type="button">Add Review</button><p></p>
         <div id="container"></div>
         <input type="submit" value="Add Product">
     </form>
-    <button id='review'onclick="addField()">Add Review</button><p></p>
+
 
 </body>
 </html>

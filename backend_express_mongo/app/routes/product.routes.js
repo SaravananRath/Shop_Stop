@@ -12,14 +12,13 @@ module.exports = (app)=> {
         filename:(req,file,cb)=>{
             cb(null,file.fieldname+'-'+Date.now()+path.extname(file.originalname))
         },
-        mimetype:'image/jpeg',
         limits:{fileSize:1000000,files:1}
     })
     var upload = multer({storage:image})
     app.get('/',(req,res)=>{
         res.sendFile(path.resolve('app/views/index.html'))
     })
-    app.post('/products',upload.single('image'),products.create)
+    app.post('/products',upload.array('image'),products.create)
     app.get('/products',products.findAll)
     app.get('/products/:productId',products.findOne)
     app.put('/products/:productId',products.update)
