@@ -5,7 +5,7 @@ const { body,validationResult} = require('express-validator/check')
 exports.create = (req,res) =>{
     body('productName','Enter Product Name').isLength({min:1})
     const errors = validationResult(req)
-    if(!errors.isEmpty()){
+    // if(!errors.isEmpty()){
     let arr = Object.assign(req.files)
     arr = arr.map(x=>x.filename)
     var myData = new Product(req.body)
@@ -18,17 +18,17 @@ exports.create = (req,res) =>{
         .then(item=>res.send('Product Saved'+item))
         .catch(err=>{res.status(400).send('Unable to save to database'+err)})
 
-    }
-    else{
-        // res.sendFile(path.resolve('app/views/index.html'),req.body)
-        // res.send('Invalid Name')
-        res.render('form', {
-            // name: "TutorialsPoint",
-            // url:"http://www.tutorialspoint.com"
-            productCount:req.body.productCount
-        })
-        // res.send("Hurray")
-    }
+    // // }
+    // else{
+    //     // res.sendFile(path.resolve('app/views/index.html'),req.body)
+    //     // res.send('Invalid Name')
+    //     res.render('form', {
+    //         // name: "TutorialsPoint",
+    //         // url:"http://www.tutorialspoint.com"
+    //         productCount:req.body.productCount
+    //     })
+    //     // res.send("Hurray")
+    // }
 
 }
 
