@@ -21,7 +21,30 @@
 .App-intro {
   font-size: large;
 }
+ul{
+  list-style-type: none;
+}
+li{
+  float:left;
+  padding-left: 50px;
+  padding-bottom: 20px;
+  padding-top: 30px;
+}
+span.discountedPrice{
+  padding-right:10px;
+  color:green;
 
+}
+span.price{
+  padding-right:10px;
+  text-decoration: line-through;
+
+}
+span.discount{
+  color:red;
+  font-size: 12px;
+  opacity:0.8
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

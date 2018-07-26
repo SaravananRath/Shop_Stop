@@ -8,6 +8,7 @@ const ProductSchema = mongoose.Schema({
     description:String,
     productPrice:Number,
     productDiscount:Number,
+    discountedPrice:Number,
     reviews:[],
     // image:{data:Buffer,contentType:String},
     imageUrls:[]

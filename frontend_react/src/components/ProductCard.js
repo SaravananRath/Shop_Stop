@@ -10,40 +10,49 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
     card: {
-        maxWidth: 345,
+        minWidth: 345,
+        // minHeight:500,
     },
     media: {
-        height: 0,
+        height: 80,
+        // width:250,
         paddingTop: '56.25%', // 16:9
     },
 };
 
+
+
 function ProductCard(props) {
-    const { classes } = props;
+    const { classes,product } = props;
     return (
         <div>
             <Card className={classes.card}>
                 <CardMedia
                     className={classes.media}
-                    image="/static/images/cards/contemplative-reptile.jpg"
-                    title="Contemplative Reptile"
+                    image={product.imageUrls[0]}
+                    title={product.productName}
                 />
                 <CardContent>
                     <Typography gutterBottom variant="headline" component="h2">
-                        Lizard
+                        {product.productName}
                     </Typography>
                     <Typography component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                        {product.description}
+                    </Typography>
+                    <Typography>
+                        <span className='discountedPrice'>Rs {product.discountedPrice}</span>
+                        <span className="price">Rs {product.productPrice}</span>
+                        <span className='discount'>{product.productDiscount}% OFF</span>
                     </Typography>
                 </CardContent>
+
                 <CardActions>
-                    <Button size="small" color="primary">
-                        Share
-                    </Button>
-                    <Button size="small" color="primary">
-                        Learn More
-                    </Button>
+                    {/*<Button size="small" color="primary">*/}
+                        {/*Share*/}
+                    {/*</Button>*/}
+                    {/*<Button size="small" color="primary">*/}
+                        {/*Learn More*/}
+                    {/*</Button>*/}
                 </CardActions>
             </Card>
         </div>

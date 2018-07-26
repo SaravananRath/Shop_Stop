@@ -9,11 +9,14 @@ exports.create = (req,res) =>{
     let arr = Object.assign(req.files)
     arr = arr.map(x=>x.filename)
     var myData = new Product(req.body)
+    var discountedPrice = req.body.productPrice - (req.body.productDiscount*req.body.productPrice)/100
     // var img = fs.readFileSync(req.file.path)
     // myData.image.data=img
     // myData.image.contentType='image/jpg'
     myData.imageUrls=arr
-    console.log(myData)
+    myData.discountedPrice=discountedPrice
+
+    // console.log(myData)
     myData.save()
         .then(item=>res.send('Product Saved'+item))
         .catch(err=>{res.status(400).send('Unable to save to database'+err)})
