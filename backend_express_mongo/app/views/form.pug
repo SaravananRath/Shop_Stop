@@ -1,0 +1,65 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  title Document
+  script.
+    function addImageField(){
+    var imageContainer = document.getElementById('imageContainer')
+    var input = document.createElement('input')
+    input.type='file'
+    input.name='image'
+    imageContainer.appendChild(input)
+    imageContainer.appendChild(document.createElement('p'))
+    }
+    function addField(){
+    var container=document.getElementById("container")
+    // container.appendChild(document.createTextNode('Review ' + (i + 1)))
+    var input = document.createElement('input')
+    input.type = 'text'
+    input.name = 'reviews'
+    input.placeholder ='Review'
+    container.appendChild(input)
+    container.appendChild(document.createElement("p"))
+    }
+h3 Add Product
+form(method='post' action='/products' enctype='multipart/form-data')
+  label  Enter Product Details
+  p
+  label Select Category
+  select(name='productCategory')
+    option(value='Men') Men
+    option(value='Women') Women
+    option(value='Kid') Kids
+  p
+  input(type='text' name='productName' placeholder='Enter Product Name')
+  p
+  input(type='number' name='productCount' placeholder='Enter Product Count' value=productCount)
+  p
+  label Select Brand
+  select(name='Brand')
+    option(value='Nike') Nike
+    option(value='Adidas') Adidas
+    option(value='Arrow') Arrow
+    option(value='Raymond') Raymond
+    option(value='Nandhu') Nandhu
+    option(value='SRS') SRS
+    option(value='Woodland') Woodland
+    option(value='Bata') Bata
+  p
+  label Description
+  p
+  textarea(name='description' id='' cols='30' rows='10' value=description)
+  p
+  input(type='number' name='productPrice' placeholder='Enter Price' value=price)
+  p
+  input(type='number' name='productDiscount' placeholder='Enter Discount %')
+  p
+  button#image(onclick='addImageField()' type='button') Add Image
+  p
+  #imageContainer
+  button#review(onclick='addField()' type='button') Add Review
+  p
+  #container
+  input(type='submit' value='Add Product')

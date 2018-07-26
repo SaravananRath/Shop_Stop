@@ -16,7 +16,8 @@ module.exports = (app)=> {
     })
     var upload = multer({storage:image})
     app.get('/',(req,res)=>{
-        res.sendFile(path.resolve('app/views/index.html'))
+        // res.sendFile(path.resolve('app/views/index.html'))
+        res.render('form')
     })
     app.post('/products',upload.array('image'),products.create)
     app.get('/products',products.findAll)

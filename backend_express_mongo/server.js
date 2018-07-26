@@ -8,6 +8,10 @@ mongoose.Promise = global.Promise
 const app = express()
 const port = 3001
 app.use(cors())
+app.set('view engine', 'pug');
+app.set('views','./app/views');
+
+// app.use()
 var routes = require('./app/routes/product.routes')
 routes(app)
 
