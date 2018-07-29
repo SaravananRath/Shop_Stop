@@ -1,17 +1,51 @@
-import {GET_PRODUCTS} from "../const";
-
+import {GET_PRODUCT, GET_PRODUCTS} from "../const";
+import { combineReducers } from 'redux';
 var _ = require('lodash')
+// const initialState = {
+//     productsById:[],
+//     productById:[]
+// }
 
-export const productsById = (state={},action)=>{
+ const productsById = (state={},action)=>{
     switch(action.type){
         case GET_PRODUCTS:{
-            // console.log(action.products)
-            // console.log(_.mapKeys(action.products,'_id'))
-            return (_.mapKeys(action.products,'_id'))
-            // return(_.mapKeys(action.data,'_id'))
+            return {...state,..._.mapKeys(action.products,'_id')}
         }
+
         default:
             return state
 
     }
 }
+
+const productIdSearch= (state={},action)=>{
+    switch(action.type){
+        case GET_PRODUCT:{
+            return{...state,...action.product}
+        }
+        default:
+            return state
+         }
+}
+
+const rootReducer= combineReducers({
+    productsById:productsById,
+    productIdSearch:productIdSearch
+})
+
+export default rootReducer
+// const productsById = (state=initialState,action)=>{
+//     switch(action.type){
+//         case GET_PRODUCTS:{
+//             return {...state,productsById:_.mapKeys(action.products,'_id')}
+//         }
+//         case GET_PRODUCT:{
+//             return {...state,productById:action.product}
+//         }
+//
+//         default:
+//             return state
+//
+//     }
+// }
+// export default productsById

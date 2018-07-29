@@ -1,12 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+// import PropTypes from 'prop-types';
+// import Button from '@material-ui/core/Button';
+// import IconButton from '@material-ui/core/IconButton';
+// import MenuIcon from '@material-ui/icons/Menu';
 
 const styles = {
     root: {
@@ -25,23 +25,21 @@ function NavAppBar(props) {
     const { classes } = props;
     return (
         <div className={classes.root}>
-            <AppBar position="static" color='inherit'>
+            <AppBar position="sticky" color='inherit'>
                 <Toolbar>
-                    <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
-                        <MenuIcon />
-                    </IconButton>
+                    {/*<IconButton className={classes.menuButton} color="inherit" aria-label="Menu">*/}
+                        {/*<MenuIcon />*/}
+                    {/*</IconButton>*/}
                     <Typography variant="title" color="inherit" className={classes.flex}>
-                        <h3>Shop Stop</h3>
+                        <p className="font-effect-neon">SHOP STOP</p>
                     </Typography>
-                    <Button color="inherit">Login</Button>
+                    {/*<Button color="inherit">Login</Button>*/}
                 </Toolbar>
             </AppBar>
         </div>
     );
 }
 
-AppBar.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
+
 
 export default withStyles(styles)(NavAppBar);

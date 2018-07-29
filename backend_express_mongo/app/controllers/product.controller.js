@@ -43,7 +43,18 @@ exports.findAll = (req,res) =>{
 }
 
 exports.findOne = (req,res) =>{
+    // console.log(req.params)
+    Product.findById(req.params.productId)
+        .then(note=>{
+            if(!note) {
+                return res.status(404).send({
+                    message: 'Product not found with the id'
+                })
+            }
+            res.send(note)
+        })
 
+    // Product.find({})
 }
 
 exports.update = (req,res) =>{
