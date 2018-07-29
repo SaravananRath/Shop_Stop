@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {GET_PRODUCT, GET_PRODUCT_URL, GET_PRODUCTS, GET_PRODUCTS_URL,} from "../const";
+import {GET_PRODUCT, GET_PRODUCT_URL, GET_PRODUCTS, GET_PRODUCTS_URL, REMOVE_PRODUCT,} from "../const";
 
 
 export function getProducts(){
@@ -30,6 +30,12 @@ export function getProduct(id){
             .catch(function(error){
                 console.log(error)
             })
+    }
+}
+
+export function removeProduct(){
+    return {
+        type: REMOVE_PRODUCT
     }
 }
 
