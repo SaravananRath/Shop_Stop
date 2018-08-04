@@ -22,7 +22,8 @@ module.exports = (app)=> {
     app.post('/products',upload.array('image'),products.create)
     app.get('/products',products.findAll)
     app.get('/product/:productId',products.findOne)
-    app.put('/products/:productId',products.update)
+    app.get('/products/:cartProducts',products.checkUpdate)
+    app.put('/products/:cartProducts',products.update)
     app.delete('/products/:productId',products.delete)
     app.get('/image/:id',(req, res) => {
     });

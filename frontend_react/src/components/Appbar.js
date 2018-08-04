@@ -4,10 +4,9 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 // import PropTypes from 'prop-types';
-// import Button from '@material-ui/core/Button';
 // import IconButton from '@material-ui/core/IconButton';
 // import MenuIcon from '@material-ui/icons/Menu';
-
+import {Link} from 'react-router'
 const styles = {
     root: {
         flexGrow: 1,
@@ -31,7 +30,12 @@ function NavAppBar(props) {
                         {/*<MenuIcon />*/}
                     {/*</IconButton>*/}
                     <Typography variant="title" color="inherit" className={classes.flex}>
-                        <p className="font-effect-neon">SHOP STOP</p>
+                        <Link className='checkout' to="/"> <p className="font-effect-neon">SHOP STOP</p></Link>
+                    </Typography>
+                    <Typography>
+
+                        <Link className='checkout'to="/cart">CHECKOUT</Link>
+
                     </Typography>
                     {/*<Button color="inherit">Login</Button>*/}
                 </Toolbar>

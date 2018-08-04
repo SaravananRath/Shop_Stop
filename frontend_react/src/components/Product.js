@@ -3,6 +3,7 @@ import ProductCard from './ProductCard';
 import { Link } from 'react-router'
 // import NavAppBar from './Appbar'
 // import Grow from '@material-ui/core/Grow'
+import NavAppBar from './Appbar'
 class Product extends Component {
 
     componentDidMount(){
@@ -31,9 +32,10 @@ class Product extends Component {
 
         return (
             <div className="App">
-                {/*<NavAppBar/>*/}
+
+                <NavAppBar/>
                 {/*{(this.state.products)?(this.state.products.imageUrls.map((a,index)=>{return(<img key={index} src={a}  width='200px' height='280px'/>)})):(<div></div>)}*/}
-                {/*<ProductCard products={this.props.products}/>*/}
+                {/*<ProductCard products={this.props.products}/>*/}d
                <ul className='productList'> {this.renderProducts()}</ul>
                 </div>
         );

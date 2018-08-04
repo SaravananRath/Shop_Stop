@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const ProductSchema = mongoose.Schema({
     productCategory:String,
     productName:String,
-    productCount:Number,
+    productCount:{type:Number,min:0},
     Brand:String,
     description:String,
     productPrice:Number,

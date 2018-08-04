@@ -40,9 +40,14 @@ function ProductCard(props) {
                         {product.description}
                     </Typography>
                     <Typography>
+                        {product.productCount!==0 && <span>
                         <span className='discountedPrice'>Rs {product.discountedPrice}</span>
                         <span className="price">Rs {product.productPrice}</span>
-                        <span className='discount'>{product.productDiscount}% OFF</span>
+                            <span className='discount'>{product.productDiscount}% OFF</span>
+                        </span>
+                        }
+
+                        {product.productCount===0 && <span className='comingSoon'>Coming Soon</span>}
                     </Typography>
                 </CardContent>
 

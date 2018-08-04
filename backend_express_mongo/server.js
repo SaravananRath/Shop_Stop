@@ -17,12 +17,15 @@ routes(app)
 
 mongoose.connect(dbConfig.url,{ useNewUrlParser: true })
     .then(()=>{
-        console.log('Succesfully Connected to Database')
+        console.log('Mongoose Succesfully Connected to Database')
     })
     .catch(err=>{
-        console.log('Could not connect to the database')
+        console.log('Mongoose Could not connect to the database')
         process.exit()
     })
+
+
+
 
 
 app.use(bodyParser.urlencoded({extended:true}))
@@ -30,7 +33,7 @@ app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
 // app.get('/',express.static(__dirname+'/views/index.html'))
 
-console.log(__dirname + '/app/public')
+// console.log(__dirname + '/app/public')
 
 app.use(express.static(__dirname + '/app/public/uploads'))
 
