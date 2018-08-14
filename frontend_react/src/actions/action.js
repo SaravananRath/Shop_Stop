@@ -71,11 +71,15 @@ export function buyProduct(products){
                 axios.put(BUY_PRODUCTS_URL+sortedProducts)
                     .then(response=>{
                         console.log(response)
-                        dispatch(buyProductSuccess)
+                        dispatch(buyProductSuccess())
                     })
                     .catch(function(error){
                         console.log(error)
                     })
+
+            }
+            if(response.data[0]=='insufficientInventory'){
+                alert('Not enough inventory',response.data)
             }
         })
     }

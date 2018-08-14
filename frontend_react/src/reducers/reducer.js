@@ -73,6 +73,7 @@ const productsInCart=(state={},action)=>{
             return(_.omit(state,action.id))
         }
         case BUY_PRODUCT:{
+            console.log('Bought')
             return([])
         }
 

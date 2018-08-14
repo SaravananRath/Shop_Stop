@@ -2,6 +2,7 @@ import React , { Component } from 'react'
 import NavAppBar from './Appbar'
 import MediaControlCard from './CartProduct'
 import Button from '@material-ui/core/Button'
+import {Paper} from '@material-ui/core'
 class Cart extends Component{
 
     renderCartProducts(){
@@ -38,7 +39,16 @@ class Cart extends Component{
                 totalprice+=price
             }
                  }
-        return(<div><h3><b>Total Price</b></h3><p>Total = {totalprice}</p><Button variant='text' color='secondary' onClick={()=>{buyProducts(Object.values(cartProducts))}}>BUY</Button></div>)
+        return(<div><h3><b>Total Price</b></h3><p>Total = {totalprice}</p>
+             <Button variant='text' color='secondary' onClick={()=> {
+                 // console.log(Object.values(cartProducts).length===0)
+                 if(Object.values(cartProducts).length!==0) {
+                     buyProducts(Object.values(cartProducts))
+                 }
+
+             }
+                }>BUY</Button>
+        </div>)
 
     }
     render(){
@@ -51,8 +61,10 @@ class Cart extends Component{
                 {this.renderCartProducts()}
                 </div>
                 <div className='pricing'>
+
                 {this.renderPricing()}
                 {this.renderTotal()}
+
                 </div>
             </div>
             </div>

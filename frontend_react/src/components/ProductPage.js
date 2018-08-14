@@ -1,6 +1,8 @@
 import React , { Component } from 'react'
 import Button from '@material-ui/core/Button'
 import NavAppBar from './Appbar'
+import Grid from '@material-ui/core/Grid';
+import Paper from'@material-ui/core/Paper'
 class ProductPage extends Component{
     componentDidMount(){
         this.props.getProduct()
@@ -41,6 +43,15 @@ class ProductPage extends Component{
                 <p>{product.description}</p>
                 <p>Remaining:{product.productCount}</p>
                 <hr/>
+                <b><h4>Reviews</h4></b>
+                {/*{(product.reviews)?(console.log(product.reviews)):(<div>loading</div>)}*/}
+                {(product.reviews)?(product.reviews.map((review,index)=>{
+                    return (
+                    <p key={index}>{review}</p>
+                )
+                })):(<div>loading</div>)}
+
+                <hr/>
                 {(product.productCount > 0)?(<Button variant="contained" color="primary" onClick={()=>this.handleClick({product})}>
                     Add To Cart
                 </Button>):(<div>Coming soon</div>) }
@@ -57,15 +68,33 @@ class ProductPage extends Component{
         return(
             <div>
                 <NavAppBar/>
-
-                {/*{(this.props.product.imageUrls)?(this.props.product.imageUrls.map((url,index)=>{*/}
-                    {/*console.log('/'+url)*/}
-                    {/*return(*/}
-                        {/*<img src={'/'+url} key={index} alt='not available'/>*/}
-                    {/*)*/}
-                {/*})):(<div>No</div>)}*/}
-                {this.renderCarousel()}
-                {this.renderDetails()}
+                <Grid container >
+                    <Grid item xs={12} sm={4}>{this.renderCarousel()}</Grid>
+                <Grid item xs={12} sm={8}>{this.renderDetails()}</Grid>
+                </Grid>
+                {/*<Grid container spacing={24}>*/}
+                    {/*<Grid item xs={12}>*/}
+                        {/*<Paper>xs=12</Paper>*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={6}>*/}
+                        {/*<Paper>xs=6</Paper>*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={6}>*/}
+                        {/*<Paper>xs=6</Paper>*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={3}>*/}
+                        {/*<Paper>xs=3</Paper>*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={3}>*/}
+                        {/*<Paper>xs=3</Paper>*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={3}>*/}
+                        {/*<Paper>xs=3</Paper>*/}
+                    {/*</Grid>*/}
+                    {/*<Grid item xs={3}>*/}
+                        {/*<Paper>xs=3</Paper>*/}
+                    {/*</Grid>*/}
+                {/*</Grid>*/}
             </div>
 
         )

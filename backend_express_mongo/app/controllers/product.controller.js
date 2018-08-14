@@ -62,10 +62,10 @@ exports.checkUpdate = (req,res)=>{
     // console.log(params)
     var arr = []
     params.map(p=>{
-        arr.push(p.name)
+        arr.push(p._id)
     })
     // console.log(arr)
-    Product.find({productName:{$in:arr}},'productCount productName').then(product=>{
+    Product.find({_id:{$in:arr}},'productCount productName').then(product=>{
         // console.log(product)
         // res.send(product)
         countValidate(params,product,res)
