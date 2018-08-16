@@ -10,7 +10,6 @@ const ProductSchema = mongoose.Schema({
     productDiscount:Number,
     discountedPrice:Number,
     reviews:[],
-    // image:{data:Buffer,contentType:String},
     imageUrls:[]
 },{
     timestamps:true

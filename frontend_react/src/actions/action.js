@@ -71,6 +71,7 @@ export function buyProduct(products){
                 axios.put(BUY_PRODUCTS_URL+sortedProducts)
                     .then(response=>{
                         console.log(response)
+                        alert('Bought')
                         dispatch(buyProductSuccess())
                     })
                     .catch(function(error){
@@ -79,7 +80,7 @@ export function buyProduct(products){
 
             }
             if(response.data[0]=='insufficientInventory'){
-                alert('Not enough inventory',response.data)
+                alert(response.data)
             }
         })
     }
