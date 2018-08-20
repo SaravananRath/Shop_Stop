@@ -3,6 +3,7 @@ import {Router,Route,browserHistory} from 'react-router'
 import App from './App'
 import ProductPage from './containers/ProductPageContainer'
 import Card from './containers/CartContainer'
+import Login from './containers/LoginContainer'
 class RouterComp extends Component {
     render(){
         return(
@@ -11,6 +12,8 @@ class RouterComp extends Component {
                     <div>
 
                         <Route exact path='/' component={App}/>
+
+                        <Route path='/login' component={Login}/>
 
                         <Route path='/product/:id' component={ProductPage}/>
 

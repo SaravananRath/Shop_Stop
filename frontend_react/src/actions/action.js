@@ -1,7 +1,7 @@
 import axios from 'axios'
 import {
     ADD_TO_CART, BUY_PRODUCT,
-    BUY_PRODUCTS_URL,
+    BUY_PRODUCTS_URL, CREATE_USER_URL,
     GET_PRODUCT,
     GET_PRODUCT_URL,
     GET_PRODUCTS,
@@ -10,6 +10,12 @@ import {
 } from "../const";
 var _ = require('lodash')
 
+export function createUser(userdata){
+    return(dispatch)=>{
+        axios.post(CREATE_USER_URL,)
+
+    }
+}
 export function getProducts(){
     return(dispatch)=>{
         axios.get(GET_PRODUCTS_URL)

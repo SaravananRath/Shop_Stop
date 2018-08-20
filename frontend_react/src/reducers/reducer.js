@@ -1,5 +1,6 @@
 import {ADD_TO_CART, BUY_PRODUCT, GET_PRODUCT, GET_PRODUCTS, REMOVE_FROM_CART, REMOVE_PRODUCT} from "../const";
 import { combineReducers } from 'redux';
+import { reducer as formReducer } from 'redux-form'
 var _ = require('lodash')
 
  const productsById = (state={},action)=>{
@@ -87,7 +88,8 @@ const productsInCart=(state={},action)=>{
 const rootReducer= combineReducers({
     productsById:productsById,
     productIdSearch:productIdSearch,
-    productsInCart:productsInCart
+    productsInCart:productsInCart,
+    form:formReducer
 })
 
 export default rootReducer

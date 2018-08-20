@@ -12,7 +12,7 @@ app.set('view engine', 'pug');
 app.set('views','./app/views');
 
 // app.use()
-var routes = require('./app/routes/product.routes')
+var routes = require('./app/routes/routes')
 routes(app)
 
 mongoose.connect(dbConfig.url,{ useNewUrlParser: true })

@@ -2,8 +2,8 @@ var path = require('path')
 const Product = require('../models/product.model')
 const fs = require('fs')
 const { body,validationResult} = require('express-validator/check')
-var Promise = require('promise');
-var async = require("async");
+// var Promise = require('promise');
+// var async = require("async");
 var MongoClient = require('mongodb').MongoClient
 
 exports.create = (req,res) =>{
@@ -66,7 +66,7 @@ exports.checkUpdate = (req,res)=>{
     })
     // console.log(arr)
     Product.find({_id:{$in:arr}},'productCount productName').then(product=>{
-        // console.log(product)
+        console.log(product)
         // res.send(product)
         countValidate(params,product,res)
     }).catch(function(error){console.log(error)})

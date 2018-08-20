@@ -5,6 +5,8 @@ const express = require('express');
 
 module.exports = (app)=> {
     const products = require('../controllers/product.controller.js')
+    const users = require('../controllers/user.controller')
+
     var image = multer.diskStorage({
         destination:(req,file,cb)=>{
           cb(null,__dirname+'/../public/uploads')
@@ -14,6 +16,7 @@ module.exports = (app)=> {
         },
         limits:{fileSize:1000000,files:1}
     })
+
     var upload = multer({storage:image})
     app.get('/',(req,res)=>{
         // res.sendFile(path.resolve('app/views/index.html'))
@@ -25,8 +28,7 @@ module.exports = (app)=> {
     app.get('/products/:cartProducts',products.checkUpdate)
     app.put('/products/:cartProducts',products.update)
     app.delete('/products/:productId',products.delete)
-    app.get('/image/:id',(req, res) => {
-    });
+    app.post('/createUser',users.create)
 
     // console.log(path.resolve('public/uploads'))
     // app.use('/static', express.static(__dirname+'/../public/uploads'))

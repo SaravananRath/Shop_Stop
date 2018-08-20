@@ -1,6 +1,7 @@
 export const GET_PRODUCTS_URL='/products'
 export const GET_PRODUCT_URL='/product/'
 export const BUY_PRODUCTS_URL='/products/'
+export const CREATE_USER_URL='/createUser'
 export const GET_PRODUCTS = 'GET_PRODUCTS'
 export const GET_PRODUCT = 'GET_PRODUCT'
 export const REMOVE_PRODUCT='REMOVE_PRODUCT'
