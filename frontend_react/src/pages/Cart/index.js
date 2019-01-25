@@ -1,6 +1,6 @@
 import React , { Component } from 'react'
-import NavAppBar from './Navbar'
-import MediaControlCard from './CartProduct'
+import NavAppBar from '../../components/Navbar'
+import MediaControlCard from '../../components/CartProduct'
 import Button from '@material-ui/core/Button'
 import {Paper} from '@material-ui/core'
 class Cart extends Component{

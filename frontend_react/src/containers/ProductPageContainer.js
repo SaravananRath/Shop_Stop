@@ -1,4 +1,4 @@
-import ProductPage from '../pages/ProductPage'
+import ProductPage from '../pages/Product'
 import { connect } from 'react-redux'
 import { getProduct,removeProduct,addToCart } from "../actions/action";
 
