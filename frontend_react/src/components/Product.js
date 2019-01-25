@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProductCard from './ProductCard';
 import { Link } from 'react-router'
-import NavAppBar from './Appbar'
+import NavAppBar from './Navbar'
 class Product extends Component {
 
     componentDidMount(){

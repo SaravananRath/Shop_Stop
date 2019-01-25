@@ -1,4 +1,4 @@
-import ProductPage from '../components/ProductPage'
+import ProductPage from '../pages/ProductPage'
 import { connect } from 'react-redux'
 import { getProduct,removeProduct,addToCart } from "../actions/action";
 
@@ -7,8 +7,6 @@ const props =(state)=> {
             product:state.productIdSearch,
             cartProducts:state.productsInCart
         }}
-
-
 const dispatch = (dispatch,props)=>{
     return{
         getProduct:()=>dispatch(getProduct(props.params.id)),
