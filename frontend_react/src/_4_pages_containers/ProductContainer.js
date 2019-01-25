@@ -1,4 +1,4 @@
-import Product from '../components/Product'
+import Home from '../pages/Home'
 import { connect } from 'react-redux'
 import { getProducts } from "../actions/action";
 
@@ -19,6 +19,6 @@ const dispatch = (dispatch)=>{
     }
 }
 
-export default connect(props,dispatch)(Product)
+export default connect(props,dispatch)(Home)
 
 
