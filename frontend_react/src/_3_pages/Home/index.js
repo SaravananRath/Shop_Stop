@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import ProductCard from "../../components/ProductCard";
+import ProductCard from "../../_2_components/ProductCard";
 import { Link } from "react-router";
-import NavAppBar from "../../components/Navbar";
+import NavAppBar from "../../_2_components/Navbar";
 class Home extends Component {
   componentDidMount() {
     this.props.getProducts();

@@ -1,6 +1,6 @@
-import ProductPage from '../pages/Product'
+import ProductPage from '../_3_pages/Product'
 import { connect } from 'react-redux'
-import { getProduct,removeProduct,addToCart } from "../actions/action";
+import { getProduct,removeProduct,addToCart } from "../_0_actions";
 
 const props =(state)=> {
         return {

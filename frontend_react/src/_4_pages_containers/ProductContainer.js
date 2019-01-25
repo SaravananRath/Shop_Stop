@@ -1,6 +1,6 @@
-import Home from '../pages/Home'
+import Home from '../_3_pages/Home'
 import { connect } from 'react-redux'
-import { getProducts } from "../actions/action";
+import { getProducts } from "../_0_actions";
 
 const products = (prod_arr)=>{
     // let new_prod_arr = Object.assign(prod_arr)

@@ -20,7 +20,6 @@ export function getProducts(){
     return(dispatch)=>{
         axios.get(GET_PRODUCTS_URL)
             .then(response=>{
-                // console.log(response.data)
                 return(dispatch(getProductsSuccess(response.data)))
             })
             .catch(function(error){
@@ -67,7 +66,6 @@ function getProductSuccess(product){
 }
 
 export function buyProduct(products){
-    // console.log("In Action",products)
     var sortedProducts =  _.sortBy(products,['_id'])
     sortedProducts = JSON.stringify(sortedProducts)
     return (dispatch)=>{

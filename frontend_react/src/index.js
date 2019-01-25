@@ -7,7 +7,7 @@ import {render} from 'react-dom'
 import{Provider} from 'react-redux'
 import {createStore,applyMiddleware} from 'redux'
 // import productsById from './reducers/reducer'
-import rootReducer from './reducers/reducer'
+import rootReducer from './_1_reducers/reducer'
 import {composeWithDevTools} from 'redux-devtools-extension'
 const store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)))
 const ReduxApp = () =>(

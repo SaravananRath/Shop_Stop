@@ -1,9 +1,9 @@
 import React,{ Component } from 'react'
 import {Router,Route,browserHistory} from 'react-router'
 import App from './App'
-import Product from './pages_containers/ProductPageContainer'
-import Card from './pages_containers/CartContainer'
-import Login from './pages_containers/LoginContainer'
+import Product from './_4_pages_containers/ProductPageContainer'
+import Card from './_4_pages_containers/CartContainer'
+import Login from './_4_pages_containers/LoginContainer'
 class RouterComp extends Component {
     render(){
         return(

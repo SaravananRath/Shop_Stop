@@ -2,7 +2,7 @@ import React , { Component } from 'react'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid';
 import Paper from'@material-ui/core/Paper'
-import NavAppBar from '../../components/Navbar'
+import NavAppBar from '../../_2_components/Navbar'
 class Product extends Component{
     componentDidMount(){
         this.props.getProduct()
