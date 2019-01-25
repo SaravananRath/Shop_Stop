@@ -72,29 +72,6 @@ class ProductPage extends Component{
                     <Grid item xs={12} sm={4}>{this.renderCarousel()}</Grid>
                 <Grid item xs={12} sm={8}>{this.renderDetails()}</Grid>
                 </Grid>
-                {/*<Grid container spacing={24}>*/}
-                    {/*<Grid item xs={12}>*/}
-                        {/*<Paper>xs=12</Paper>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={6}>*/}
-                        {/*<Paper>xs=6</Paper>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={6}>*/}
-                        {/*<Paper>xs=6</Paper>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={3}>*/}
-                        {/*<Paper>xs=3</Paper>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={3}>*/}
-                        {/*<Paper>xs=3</Paper>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={3}>*/}
-                        {/*<Paper>xs=3</Paper>*/}
-                    {/*</Grid>*/}
-                    {/*<Grid item xs={3}>*/}
-                        {/*<Paper>xs=3</Paper>*/}
-                    {/*</Grid>*/}
-                {/*</Grid>*/}
             </div>
 
         )

@@ -2,8 +2,6 @@ var path = require('path')
 const Product = require('../models/product.model')
 const fs = require('fs')
 const { body,validationResult} = require('express-validator/check')
-// var Promise = require('promise');
-// var async = require("async");
 var MongoClient = require('mongodb').MongoClient
 
 exports.create = (req,res) =>{

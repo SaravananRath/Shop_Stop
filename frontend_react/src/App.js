@@ -6,8 +6,6 @@ class App extends Component {
 
     render() {
     return (
-
-          // {(this.state.products)?(this.state.products.imageUrls.map((a,index)=>{return(<img key={index} src={a}  width='200px' height='280px'/>)})):(<div></div>)}
       <div>
         <Product/>
       </div>
