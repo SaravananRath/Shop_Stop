@@ -6,33 +6,16 @@ var MongoClient = require('mongodb').MongoClient
 
 exports.create = (req,res) =>{
     body('productName','Enter Product Name').isLength({min:1})
-    const errors = validationResult(req)
-    // if(!errors.isEmpty()){
+    // const errors = validationResult(req)
     let arr = Object.assign(req.files)
     arr = arr.map(x=>x.filename)
     var myData = new Product(req.body)
     var discountedPrice = req.body.productPrice - (req.body.productDiscount*req.body.productPrice)/100
-    // var img = fs.readFileSync(req.file.path)
-    // myData.image.data=img
-    // myData.image.contentType='image/jpg'
     myData.imageUrls=arr
     myData.discountedPrice=discountedPrice
     myData.save()
         .then(item=>res.send('Product Saved'+item))
         .catch(err=>{res.status(400).send('Unable to save to database'+err)})
-
-    // // }
-    // else{
-    //     // res.sendFile(path.resolve('app/views/index.html'),req.body)
-    //     // res.send('Invalid Name')
-    //     res.render('form', {
-    //         // name: "TutorialsPoint",
-    //         // url:"http://www.tutorialspoint.com"
-    //         productCount:req.body.productCount
-    //     })
-    //     // res.send("Hurray")
-    // }
-
 }
 
 exports.findAll = (req,res) =>{

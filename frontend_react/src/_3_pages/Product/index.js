@@ -1,11 +1,21 @@
 import React , { Component } from 'react'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid';
-import Paper from'@material-ui/core/Paper'
 import NavAppBar from '../../_2_components/Navbar'
+import Loader from '../../_2_components/Loader'
+
 class Product extends Component{
+    constructor(){
+        super()
+        this.state = {
+            isLoading:true
+        }
+    }
     componentDidMount(){
         this.props.getProduct()
+        setTimeout(() => {
+            this.setState({ isLoading:false })
+        }, 800);
     }
     componentWillUnmount(){
         this.props.removeProduct()
@@ -25,7 +35,7 @@ class Product extends Component{
         })}</Carousel></div>):(<div>No</div>))
     }
     renderDetails(){
-        let { product,cartProducts} = this.props
+        let { product } = this.props
         if(product){
             return(<div>
                <b> <h2>{product.productName}</h2></b>
@@ -58,13 +68,14 @@ class Product extends Component{
     }
 
     render(){
+        const { isLoading } = this.state
         return(
             <div>
                 <NavAppBar/>
-                <Grid container >
+                { isLoading ? <Loader/> : <Grid container >
                     <Grid item xs={12} sm={4}>{this.renderCarousel()}</Grid>
-                <Grid item xs={12} sm={8}>{this.renderDetails()}</Grid>
-                </Grid>
+                    <Grid item xs={12} sm={8}>{this.renderDetails()}</Grid>
+                </Grid>}
             </div>
 
         )

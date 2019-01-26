@@ -4,6 +4,7 @@ import App from './App'
 import Product from './_4_pages_containers/ProductPageContainer'
 import Card from './_4_pages_containers/CartContainer'
 import Login from './_4_pages_containers/LoginContainer'
+import Loader from './_2_components/Loader'
 class RouterComp extends Component {
     render(){
         return(
@@ -18,6 +19,9 @@ class RouterComp extends Component {
                         <Route path='/product/:id' component={Product}/>
 
                         <Route path='/cart' component={Card}/>
+
+                        <Route path='/loader' component={Loader}/>
+
                     </div>
                 </Router>
             </div>

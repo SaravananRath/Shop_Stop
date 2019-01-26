@@ -2,7 +2,7 @@ import React , { Component } from 'react'
 import NavAppBar from '../../_2_components/Navbar'
 import MediaControlCard from '../../_2_components/CartProduct'
 import Button from '@material-ui/core/Button'
-import {Paper} from '@material-ui/core'
+
 class Cart extends Component{
 
     renderCartProducts(){

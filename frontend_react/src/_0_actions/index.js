@@ -83,7 +83,7 @@ export function buyProduct(products){
                     })
 
             }
-            if(response.data[0]=='insufficientInventory'){
+            if(response.data[0]==='insufficientInventory'){
                 alert(response.data)
             }
         })
